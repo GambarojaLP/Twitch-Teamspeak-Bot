@@ -1,0 +1,25 @@
+{
+  "name": "freayzerbot",
+  "version": "1.0.0",
+  "description": "Just a Bot used to get Twitch Messages and via Ts3 Framework into teamspeak",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GambarojaLP/FreayzerBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GambarojaLP/FreayzerBot/issues"
+  },
+  "homepage": "https://github.com/GambarojaLP/FreayzerBot#readme",
+  "dependencies": {
+    "cactus-ts": "0.0.2",
+    "dotenv": "^4.0.0",
+    "node-teamspeak-api": "^1.0.0",
+    "tmi.js": "^1.2.1"
+  }
+}
