@@ -32,7 +32,7 @@ client.on("message", function (channel, userstate, message, self) {
     random = Math.random();
     //Teamspeak Nachricht schicken
     let bot = new Cactus ({
-        login: process.env.USER,
+        login: process.env.BOT_NAME,
         ip: process.env.IP,
         password: process.env.QUERY_PASS,
         display_name: random
@@ -42,7 +42,7 @@ client.on("message", function (channel, userstate, message, self) {
             bot.send('sendtextmessage', {
                 target: process.env.TARGET_ID,
                 targetmode: 1,
-                msg: '!yt ' + req[0]
+                msg: '!yt [URL]' + req[0] + '[/URL]'
         }, (res) => {
             console.log(res)
             })
