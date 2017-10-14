@@ -28,12 +28,14 @@ client.on("message", function (channel, userstate, message, self) {
     //Das wichtigste aus dem Request rausfiltern
     let regex = /(http|https):\/\/(www\.)?(youtube\.com\/)(watch\?v=|watch\/)(\w){11}((\?|&)[A-z]+=[\w]*)*(#[\w]+)*$/
     req = request.match(regex)
+    //Username Random auswählen um Nickname already in use zu vermeiden.
+    random = Math.random();
     //Teamspeak Nachricht schicken
     let bot = new Cactus ({
         login: process.env.USER,
         ip: process.env.IP,
         password: process.env.QUERY_PASS,
-        display_name: process.env.BOT_NAME
+        display_name: random
     })
     if (req!=undefined && req.length > 0) {
         bot.on('ready', () => {
