@@ -30,18 +30,22 @@ client.on("message", function (channel, userstate, message, self) {
     req = request.match(regex)
     //Teamspeak Nachricht schicken
     let bot = new Cactus ({
-        login: "freayzerbot",
-        ip: "ts.sleeplessgaming.de",
+        login: process.env.USER,
+        ip: process.env.IP,
         password: process.env.QUERY_PASS,
-        display_name: "Cactus-Dude"
+        display_name: process.env.BOT_NAME
     })
-    bot.on('ready', () => {
-        bot.send('sendtextmessage', {
-            target: 8,
-            targetmode: 1,
-            msg: '!ytadd ' + req[0]
-    }, (res) => {
-        console.log(res)
-        })
-    })}
+    if (req!=undefined && req.length > 0) {
+        bot.on('ready', () => {
+            bot.send('sendtextmessage', {
+                target: process.env.TARGET_ID,
+                targetmode: 1,
+                msg: '!yt ' + req[0]
+        }, (res) => {
+            console.log(res)
+            })
+        })}
+    } else {
+        return;
+    }
 });
